@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="css">
 body {
   margin: 0;
   padding: 0;
