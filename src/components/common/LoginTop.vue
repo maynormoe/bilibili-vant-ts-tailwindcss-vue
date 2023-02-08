@@ -14,8 +14,8 @@ const props = defineProps(['topTitle'])
 
 <style lang="css">
 .loginTop {
-  height: 2.25rem;
-  width: 20rem;
+  height: 8.9vw;
+  width: 95vw;
   border-radius: 20px;
   background: #e0e0e0;
   box-shadow:  5px 5px 10px #c3c3c3,
