@@ -1,12 +1,16 @@
 <template>
   <div class="btnBox">
-    <BUTTON class="loginBtn">{{btnText}}</BUTTON>
+    <BUTTON class="loginBtn" @click="registerClick">{{btnText}}</BUTTON>
   </div>
 
 </template>
 
 <script setup lang="ts">
 defineProps(['btnText'])
+
+const registerClick = () => {
+  this.$emit('submitRegister')
+}
 </script>
 
 <style lang="css">
@@ -16,8 +20,8 @@ defineProps(['btnText'])
   align-items: center;
 }
 .loginBtn {
-  height: 45px;
-  width: 200px;
+  height: 2.34375vw;
+  width: 5.208vw;
   background: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
   border-radius: 20px;
   font-family: sans-serif;

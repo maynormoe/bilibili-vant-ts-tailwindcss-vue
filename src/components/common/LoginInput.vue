@@ -1,25 +1,32 @@
 <template>
-    <van-field v-model="content" :label="label" :type="type" :placeholder="placeholder" :rule="rule" />
+  <van-field v-model="content" :label="label" :type="type" :placeholder="placeholder" :rule="rule" @input="handlerReg"/>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
-
-const content:  Ref<string>= ref('');
-// 处理正则表达式
-const handlerReg = function (){
-  const reg = new RegExp(this.rule)
-  if (reg.test(content)) {
-    this.$emit('inputChange',content)
+import {ref} from "vue";
+defineProps({
+  label: String,
+  type: {
+    type: String,
+    default: 'text'
+  },
+  placeholder: String,
+  rule: {
+    type: RegExp,
+    default: /.*/
   }
-}
-
-watch(() => content.value,() => {
-  handlerReg()
 })
 
+const content = ref('')
+
+const handlerReg = () => {
+  if (this.rule.test(content.value)) {
+
+  } else {
+
+  }
+}
 </script>
 
 <style lang="css">
-
 </style>

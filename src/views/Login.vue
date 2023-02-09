@@ -1,5 +1,5 @@
 <template>
-  <LoginTop top-title="注册"></LoginTop>
+  <LoginTop top-title="登录"></LoginTop>
 
   <div class="mt-20 font-sans">
     <LoginInput label="用户名" type="text" placeholder="设置你的用户名" rule="^[\u4e00-\u9fa5a-zA-Z0-9]{6,12}$" class="mb-8" @inputChange="successInput"></LoginInput>
@@ -8,8 +8,8 @@
   </div>
 
   <div class="flex flex-1 justify-center items-center">
-    <LoginBtn btn-text="注册" @submitRegister="submitRegister"></LoginBtn>
-    <LoginBtn btn-text="切换到登录" @click="goLogin"></LoginBtn>
+    <LoginBtn btn-text="登录" @submitRegister="submitRegister"></LoginBtn>
+    <LoginBtn btn-text="切换到注册" @click="goRegister"></LoginBtn>
   </div>
 
 
@@ -20,7 +20,9 @@ import LoginTop from "@/components/common/LoginTop.vue";
 import LoginInput from '@/components/common/LoginInput.vue'
 import LoginBtn from "@/components/common/LoginBtn.vue";
 
+import { useRoute } from "vue-router";
 import router from "@/router";
+
 
 import { reactive } from "vue";
 
@@ -38,24 +40,22 @@ const successInput = () => {
 
 }
 
-const submitRegister = async () => {
+const submitRegister = () => {
 
   if (userInfo.username!=null && userInfo.password!=null && userInfo.entryPasswd!=null) {
     if (userInfo.entryPasswd == userInfo.password ) {
       console.log("success")
-      const res = await this.$http.post('/register',{
+      this.$http.post('/register',{
         username: userInfo.username,
         password: userInfo.password
-      }).then((res: any) => {
-        //
-      });
+      })
     }
   }
 }
-const goLogin = () => {
-  router.push('/login')
-}
 
+const goRegister = () => {
+  router.push('/register')
+}
 
 
 </script>
