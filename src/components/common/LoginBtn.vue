@@ -20,8 +20,8 @@ const registerClick = () => {
   align-items: center;
 }
 .loginBtn {
-  height: 2.34375vw;
-  width: 5.208vw;
+  height: 10vw;
+  width: 40vw;
   background: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
   border-radius: 20px;
   font-family: sans-serif;
