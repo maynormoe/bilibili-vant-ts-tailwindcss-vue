@@ -8,7 +8,7 @@
   </div>
 
   <div class="flex flex-1 justify-center items-center">
-    <LoginBtn btn-text="注册" @submitRegister="submitRegister"></LoginBtn>
+    <LoginBtn btn-text="注册" @submitRegister="submitRegister" @click="goUserInfo"></LoginBtn>
     <LoginBtn btn-text="切换到登录" @click="goLogin"></LoginBtn>
   </div>
 
@@ -55,6 +55,11 @@ const submitRegister = async () => {
 const goLogin = () => {
   router.push('/login')
 }
+
+const goUserInfo = () => {
+  router.push('/userinfo')
+}
+
 
 
 
