@@ -1,6 +1,8 @@
 <template>
   <NavBar></NavBar>
   <VideoPlay :videoInfo="videoInfo"></VideoPlay>
+  <VideoInfo :videoInfo="videoInfo"></VideoInfo>
+  <VideoBottom></VideoBottom>
 </template>
 
 <script setup lang="ts">
@@ -11,6 +13,8 @@ const route = useRoute();
 
 import axios from "axios";
 import { ref } from "vue";
+import VideoInfo from "@/components/VideoInfo.vue";
+import VideoBottom from "@/components/VideoBottom.vue";
 
 export interface IVideoInfo {
   author?: string
@@ -29,7 +33,7 @@ export interface IVideoInfo {
 const videoInfo = ref<IVideoInfo[]>([])
 
 axios({
-  url: '/videoDetail',
+  url: '/videoDetailList',
   method: 'get',
   // 根据路由对象的 id 参数发送请求获取对应的视频详情
   params: { id: route.params.id }
