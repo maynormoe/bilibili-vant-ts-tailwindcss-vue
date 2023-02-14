@@ -12,5 +12,5 @@ npm run serve
 ![image](https://user-images.githubusercontent.com/110706742/218765597-eaf01c31-04fc-4b78-809d-8b39815f89b1.png)
 
  
- 技术栈： vue-tailwindcss-typescript-vant-es6-flex-vue-router
+ 技术栈： vue-tailwindcss-typescript-vant-es6-flex-vue-router-MOCKJS
  状态： 未完成（接口挂了）
